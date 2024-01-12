@@ -8,7 +8,7 @@ function getData () {
     .then(data => {
         allData = data;
         displayCharacters(data);
-        characterSay(data);
+        // characterSay(data);
     })
     .catch(error => console.error('Error loading data:', error))
 }
@@ -38,7 +38,8 @@ function characterSay (data) {
     if (data.sayings && data.sayings.length > 0) {
         const randomIndex = Math.floor(Math.random() * data.sayings.length);
         alert(`${data.name.first} ${data.name.last} ${data.sayings[randomIndex]}`);
-
-}
+    } else {
+        alert(`${data.name.first} ${data.name.last} Don't have any phrases`)
+    }
 }
 getData ()
